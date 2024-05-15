@@ -3,8 +3,29 @@
   <head>
     <title>RPF apprenticeship technical task</title>
     <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="css/styles.css" >
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=MuseoModerno:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   </head>
   <body>
-    <%= yield %>
+    <header>
+      <nav>
+        <ul>
+          <li>
+            <a href="/">Home</a> 
+          </li>
+          <li>
+            <a href="position">ISS Position</a>
+          </li>          
+          <li>
+            <a href="astronauts">Astronauts Location</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <%= yield %>
+    </main>
   </body>
 </html>
