@@ -1,7 +1,22 @@
-<h1>Where is the ISS? 🛰️</h1>
-<!-- TODO add in actual position here -->
-<p>HIIII</p>
-<% data["people"].each do |person| %>
-  <p> <%= person["name"] %>
-</p>
-<% end %>
+<div class="astronauts-container">
+  <h1 class="astronauts-header">Where are the <span class="astronauts-header-highlight">Astronauts</span>? <span class="astronauts-header-emoji">👨‍🚀</span></h1>
+  <div class="astronauts-list-container">
+    <% data["people"].each do |person| %>
+    <% initials = person["name"].split.map(&:chr).join.upcase %>
+      <div class="astronaut-container">
+        <div class="astronaut-initials-container">
+          <%= initials %>
+        </div>
+        <h3 class="astronaut-name">
+          <%= person["name"] %>
+        </h3>
+        <h4 class="astronaut-craft">
+          <%= person["craft"] %>
+          <span class="<%= person["craft"] == "ISS" ? "flag-a" : "flag-b" %>">
+            <%= person["craft"] == "ISS" ? "🌐" : "🇨🇳" %>
+          </span>
+        </h4>
+      </div>
+    <% end %>
+  </div>
+</div>
