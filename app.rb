@@ -22,12 +22,12 @@ end
 get '/astronauts' do
   astros = OpenNotify.astros
 
-  erb :astronauts, locals: {data: astros}
+  erb :astronauts, locals: { data: astros }
 end
 
-get '/astros' do
-  astros = OpenNotify.astros
+get '/iss_position.json' do
+  iss_now = OpenNotify.iss_now
 
   content_type :json
-  astros.to_json
+  iss_now.to_json
 end
