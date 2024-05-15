@@ -1,3 +1,12 @@
-<h1>Where is the ISS? 🛰️</h1>
-<!-- TODO add in actual position here -->
-<p>This observation was made at <%= Time.at(data['timestamp']) %>.</p>
+<div class="position-container">
+  <h1 class="position-header">Where is the <span class="position-header-highlight">ISS</span>? <span class="position-header-emoji">🛰️</span></h1>
+  <div class="position-location-container">
+    <h2 class="position-location-header">Right now it's current position is:</h2>
+    <div class="position-location">
+      <h3 class="position-longitude"><%= data["iss_position"]["longitude"] %> ° longitude</h3>
+      <span>and</span>
+      <h3 class="position-latitude"><%= data["iss_position"]["latitude"] %> ° latitude</h3>
+    </div>
+  <div>
+  <p class="position-observation-time">This observation was made at <span class="position-observation-time-highlight"><%= Time.at(data['timestamp']) %></span></p>
+</div>
